@@ -1,0 +1,28 @@
+\begin{figure}[htb]
+  \centering
+  \subfloat[raster]{
+    \label{fig:example:raster}
+    \includegraphics[width=0.4\linewidth]{\CurrentFilePath/161.jpg}
+  }%subfloat
+  \subfloat[vector]{
+    \label{fig:example:pdf}
+    \includegraphics[width=0.58\linewidth]{\CurrentFilePath/example.pdf}
+  }%subfloat
+  
+  \subfloat[vector + raster]{
+    \label{fig:example:svg_img}
+    \includegraphics[width=0.9\linewidth]{\CurrentFilePath/svg_img_example.pdf}
+  }%subfloat
+ \Caption{Example figure.}
+ {%
+\subref{fig:example:raster} is a raster image and \subref{fig:example:pdf} is a vector graphics.
+Never, ever, rasterize vector graphics unless you want large size and low quality files.
+We can also combine vector and raster graphics as in \subref{fig:example:svg_img}.
+Use Inkscape to import an image into a pdf file, and draw over it using whatever stuff like texts or strokes.
+\note{Particularly regarding the text, always export images to PDF to keep the text selectable, like 'hello' in the figure.}
+
+Command "includegraphics" and "input" always use the root directory as working directory.
+So, use the command "CurrentFilePath" rather than "./" if we need relative path.
+ }
+ \label{fig:example}
+\end{figure}
